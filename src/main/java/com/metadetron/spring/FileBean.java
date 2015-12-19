@@ -1,3 +1,5 @@
+package com.metadetron.spring;
+
 public class FileBean {
    private String name;
    private Integer size;
