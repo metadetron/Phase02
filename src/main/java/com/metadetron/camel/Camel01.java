@@ -14,7 +14,7 @@ public class Camel01 {
                 @Override
                 public void configure() throws Exception {
                     from("file:/home/cracoviano/tmp/tmp")
-                    .to("smtp://localhost?username=cracoviano");
+                    .to("smtp://localhost?username=cracoviano&from=cracoviano&to=cracoviano@gmail.com&subject=Test z Camela");
                 }
             });
 
