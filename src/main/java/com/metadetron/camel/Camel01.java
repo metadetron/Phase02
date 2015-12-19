@@ -7,6 +7,7 @@ import org.apache.camel.impl.DefaultCamelContext;
 
 public class Camel01 {
     public static void main(String[] args) throws Exception {
+        System.out.println("Starting Camel01!");
         CamelContext context = new DefaultCamelContext();
         try {
             context.addRoutes(new RouteBuilder() {
@@ -18,9 +19,11 @@ public class Camel01 {
             });
 
             ProducerTemplate template = context.createProducerTemplate();
+            System.out.println("Starting context...");
             context.start();
         } finally {
             context.stop();
+            System.out.println("Context stopped.");
         }
     }
 }
