@@ -15,7 +15,7 @@ public class Camel01Test {
         	Camel01.main(new String[] {});
 	        assertTrue("Test OK", true);
         } catch (Exception e) {
-        	assertTrue("Exception: ", e.getMessage());
+        	assertTrue("Exception: " + e.getMessage(), false);
         }
     }
 }
