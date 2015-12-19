@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Phase02Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-12-19T13:14:22" hostname="cracoviano-VirtualBox" time="0.033">
+  <properties/>
+  <testcase name="testMain" classname="Phase02Test" time="0.033"/>
+  <system-out><![CDATA[It runs :-) and it's phase 2
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
