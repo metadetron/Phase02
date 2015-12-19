@@ -21,6 +21,7 @@ public class Camel01 {
             ProducerTemplate template = context.createProducerTemplate();
             System.out.println("Starting context...");
             context.start();
+            Thread.sleep(10000);
         } finally {
             context.stop();
             System.out.println("Context stopped.");
