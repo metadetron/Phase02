@@ -14,7 +14,7 @@ public class Camel01 {
                 @Override
                 public void configure() throws Exception {
                     from("file:/home/cracoviano/tmp/tmp")
-                    .to("stream:out");
+                    .to("smtp://localhost?username=cracoviano");
                 }
             });
 
