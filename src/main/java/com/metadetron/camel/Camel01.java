@@ -12,7 +12,7 @@ public class Camel01 {
             context.addRoutes(new RouteBuilder() {
                 @Override
                 public void configure() throws Exception {
-                    from("file://C:/")
+                    from("file:/home/cracoviano/tmp/tmp")
                     .to("stream:out");
                 }
             });
