@@ -14,7 +14,7 @@ public class Camel01 {
                 @Override
                 public void configure() throws Exception {
                     from("file:/home/cracoviano/tmp/tmp")
-                    .to("smtps://smtp.gmail.com:587?username=testmetadetron@gmail.com&password=test2test&debugMode=true&to=cracoviano@gmail.com&mail.smtp.starttls.enable=true&subject=Test z Camela");
+                    .to("smtps://smtp.gmail.com:465?username=testmetadetron@gmail.com&password=test2test&debugMode=true&to=cracoviano@gmail.com&mail.smtp.starttls.enable=true&subject=Test z Camela");
                 }
             });
 
