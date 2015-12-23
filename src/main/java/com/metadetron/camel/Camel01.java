@@ -12,6 +12,10 @@ public class Camel01 {
         System.out.println("Starting Camel01!");
         CamelContext context = new DefaultCamelContext();
         InputStream is = Camel01.class.getResourceAsStream("camelRoute.xml");
+        if (is == null) {
+            System.out.println("File not found");
+            return;
+        }
         RoutesDefinition routes = context.loadRoutesDefinition(is);
         context.addRouteDefinitions(routes.getRoutes());
         context.start();
