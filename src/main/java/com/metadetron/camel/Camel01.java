@@ -11,7 +11,7 @@ public class Camel01 {
     public static void main(String[] args) throws Exception {
         System.out.println("Starting Camel01!");
         CamelContext context = new DefaultCamelContext();
-        InputStream is = getClass().getResourceAsStream("camelRoute.xml");
+        InputStream is = Camel01.getClass().getResourceAsStream("camelRoute.xml");
         RoutesDefinition routes = context.loadRoutesDefinition(is);
         context.addRouteDefinitions(routes.getRoutes());
         context.start();
