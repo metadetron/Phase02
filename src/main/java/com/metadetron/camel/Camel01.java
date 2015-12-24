@@ -11,7 +11,7 @@ public class Camel01 {
     public static void main(String[] args) throws Exception {
         System.out.println("Starting Camel01!");
         CamelContext context = new DefaultCamelContext();
-        InputStream is = Camel01.class.getResourceAsStream("camelRoute.xml");
+        InputStream is = Camel01.class.getResourceAsStream("/camelRoute.xml");
         if (is == null) {
             System.out.println("File not found in " + System.getProperty("user.dir"));
             return;
