@@ -17,12 +17,12 @@ public class Camel01 {
 
     public static void main(String[] args) throws Exception {
 
-        logger.debug("Starting Camel01!");
+        logger.info("Starting Camel01!");
         ApplicationContext springContext = new ClassPathXmlApplicationContext("Beans.xml");
         CamelContext camelContext = new SpringCamelContext(springContext);
         camelContext.start();
         Thread.sleep(10000);
         camelContext.stop();
-        logger.debug("Context stopped.");
+        logger.info("Context stopped.");
     }
 }
