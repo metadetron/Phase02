@@ -6,13 +6,10 @@
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
 ">
-	<routes xsi:schemaLocation="http://www.springframework.org/schema/beans
-	    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-	    http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
-	">
+	<routeContext id="externalRoutes" xmlns="http://camel.apache.org/schema/spring">
 	    <route id="bar">
-	        <from uri="direct:bar"/>
-	        <to uri="mock:bar"/>
+	        <from uri="file:/home/cracoviano/tmp/tmp"/>
+	        <to uri="smtps://smtp.gmail.com:465?username=testmetadetron@gmail.com&amp;password=test2test&amp;debugMode=true&amp;to=cracoviano@gmail.com&amp;mail.smtp.starttls.enable=true&amp;subject=Test z Camela XML"/>
 	    </route> 
-	</routes>
+	</routeContext>
 </beans>
