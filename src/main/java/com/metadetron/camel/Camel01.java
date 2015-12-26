@@ -13,7 +13,7 @@ import org.slf4j.Logger;
 
 public class Camel01 {
 
-    final Logger logger = LoggerFactory.getLogger(Wombat.class);
+    final Logger logger = LoggerFactory.getLogger(Camel01.class);
 
     public static void main(String[] args) throws Exception {
 
