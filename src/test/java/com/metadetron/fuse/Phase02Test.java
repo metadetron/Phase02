@@ -9,7 +9,7 @@ import com.metadetron.fuse.Phase02;
  * @author cracoviano, @date 12/19/15 1:08 PM
  */
 public class Phase02Test {
-    @Test public void testMain() {
+    /*@Test */public void testMain() {
 
         Phase02.main(new String[] {});
         assertTrue("Test OK", true);
