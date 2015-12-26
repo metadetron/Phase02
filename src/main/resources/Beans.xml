@@ -10,7 +10,7 @@
    <bean id="file" class="com.metadetron.spring.FileBean">
        <property name="name" value="test.xml"/>
    </bean>
-    <import resource="../externalRoutes.xml"/>
+    <import resource="/home/cracoviano/Projects/osgi_bundles/02_gradle/xml/externalRoutes.xml"/>
     <camelContext xmlns="http://camel.apache.org/schema/spring">
         <routeContextRef ref="externalRoutes"/>
     </camelContext>
