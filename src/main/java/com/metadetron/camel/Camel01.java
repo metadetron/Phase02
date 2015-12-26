@@ -10,10 +10,11 @@ import java.io.InputStream;
 public class Camel01 {
     public static void main(String[] args) throws Exception {
         System.out.println("Starting Camel01!");
-        CamelContext context = new SpringCamelContext(); // is it default? to jednak chyba nie jest default
-        context.start();
+        ApplicationContext springContext = new ClassPathXmlApplicationContext("Beans.xml");
+        CamelContext camelContext = new SpringCamelContext(springContext);
+        camelContext.start();
         Thread.sleep(10000);
-        context.stop();
+        camelContext.stop();
         System.out.println("Context stopped.");
     }
 }
