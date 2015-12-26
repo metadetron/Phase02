@@ -8,15 +8,21 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.spring.SpringCamelContext;
 import org.apache.camel.model.RoutesDefinition;
 import java.io.InputStream;
+import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
 
 public class Camel01 {
+
+    final Logger logger = LoggerFactory.getLogger(Wombat.class);
+
     public static void main(String[] args) throws Exception {
-        System.out.println("Starting Camel01!");
+
+        logger.debug("Starting Camel01!");
         ApplicationContext springContext = new ClassPathXmlApplicationContext("Beans.xml");
         CamelContext camelContext = new SpringCamelContext(springContext);
         camelContext.start();
         Thread.sleep(10000);
         camelContext.stop();
-        System.out.println("Context stopped.");
+        logger.debug("Context stopped.");
     }
 }
