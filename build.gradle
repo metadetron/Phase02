@@ -10,6 +10,7 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'osgi'
 
 test.testLogging.showStandardStreams = true
 
@@ -37,6 +38,22 @@ dependencies {
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
+}
+
+jar {
+    manifest { // the manifest of the default jar is of type OsgiManifest
+        name = 'Camel Phase02 bundle'
+        instruction 'Private-Package',
+                'com.metadetron.camel'
+        instruction 'Bundle-Vendor', 'Metadetron'
+        instruction 'Bundle-Description', 'Camel Phase02 bundle 1.0.0'
+        instruction 'Bundle-DocURL', 'http://www.metadetron.com'
+    }
+}
+task fooJar(type: Jar) {
+    manifest = osgiManifest {
+        instruction 'Bundle-Vendor', 'Metadetron'    
+    }
 }
 
 startScripts.mainClassName = 'com.metadetron.camel.Camel01'
