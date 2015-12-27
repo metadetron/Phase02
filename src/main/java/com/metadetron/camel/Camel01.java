@@ -9,14 +9,15 @@ import org.apache.camel.spring.SpringCamelContext;
 import org.apache.camel.model.RoutesDefinition;
 import java.io.InputStream;
 import org.slf4j.Logger;
- import org.slf4j.LoggerFactory;
+import org.slf4j.LoggerFactory;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
 
-public class Camel01 {
+public class Camel01 implements BundleActivator {
 
     final static Logger logger = LoggerFactory.getLogger(Camel01.class);
 
     public static void main(String[] args) throws Exception {
-
         logger.info("Starting Camel01!");
         ApplicationContext springContext = new ClassPathXmlApplicationContext("Beans.xml");
         CamelContext camelContext = new SpringCamelContext(springContext);
@@ -25,4 +26,13 @@ public class Camel01 {
         camelContext.stop();
         logger.info("Context stopped.");
     }
+
+    public void start(BundleContext context) throws Exception {
+        logger.info("Starting Camel01 OSGI component!");
+    }
+
+    public void stop(BundleContext context) throws Exception {
+        logger.info("Stoping Camel01 OSGI component!");
+    }    
+    
 }
