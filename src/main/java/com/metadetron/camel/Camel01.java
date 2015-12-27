@@ -16,6 +16,7 @@ import org.osgi.framework.BundleContext;
 public class Camel01 implements BundleActivator {
 
     final static Logger logger = LoggerFactory.getLogger(Camel01.class);
+    CamelContext camelContext = null;
 
     public static void main(String[] args) throws Exception {
         logger.info("Starting Camel01!");
@@ -30,7 +31,7 @@ public class Camel01 implements BundleActivator {
     public void start(BundleContext context) throws Exception {
         logger.info("Starting Camel01 OSGI component!");
         ApplicationContext springContext = new ClassPathXmlApplicationContext("Beans.xml");
-        CamelContext camelContext = new SpringCamelContext(springContext);
+        camelContext = new SpringCamelContext(springContext);
         camelContext.start();
         logger.info("Camel context started");
     }
