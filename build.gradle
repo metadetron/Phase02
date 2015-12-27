@@ -50,6 +50,7 @@ jar {
         instruction 'Private-Package',
                 'com.metadetron.camel'
         instruction 'Bundle-Vendor', 'Metadetron'
+        instruction 'Bundle-Activator', 'com.metadetron.camel.Camel01'
         instruction 'Bundle-Description', 'Camel Phase02 bundle 1.0.0'
         instruction 'Bundle-DocURL', 'http://www.metadetron.com'
     }
