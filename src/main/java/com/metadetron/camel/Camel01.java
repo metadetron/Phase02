@@ -30,6 +30,7 @@ public class Camel01 implements BundleActivator {
 
     public void start(BundleContext context) throws Exception {
         logger.info("Starting Camel01 OSGI component!");
+        Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
         ApplicationContext springContext = new ClassPathXmlApplicationContext("Beans.xml");
         camelContext = new SpringCamelContext(springContext);
         camelContext.start();
